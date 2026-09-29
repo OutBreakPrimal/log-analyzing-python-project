@@ -66,7 +66,7 @@ def parse_ssh(lines, year):
             try:
                 ts = datetime.strptime(
                     f"{year} {m['mon']} {m['day']} {m['time']}", "%Y %b %d %H:%M:%S")
-                if ts > now + timedelta(days=1):      # log from late last year
+                if ts > now + timedelta(days=1):      
                     ts = ts.replace(year=ts.year - 1)
             except ValueError:
                 continue
